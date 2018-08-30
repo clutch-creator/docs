@@ -1,7 +1,7 @@
 <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Structure · Shift University</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Structure · Shift University"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.shift.studio/index.html"/><meta property="og:description" content="&lt;br&gt;&lt;br&gt;"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="../script/test.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible doc separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/shift-logo.svg"/><h2 class="headerTitle">Shift University</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Structure</h1></header><article><div><span><p><br><br>
 Let's start by structuring our App.
 First we will need to add the <a href="/docs/router.html"><strong>Router</strong></a> component to handle all the different paths. And for each path we will want a <a href="/docs/route.html"><strong>Route</strong></a> component.</p>
-<p><img src="/docs/docs/assets/firsttutorial_routing1.gif" alt="Routing"></p>
+<p><img src="/docs/assets/firsttutorial_routing1.gif" alt="Routing"></p>
 <blockquote>
 <p>You can delete the default children of each created component.</p>
 </blockquote>
@@ -19,16 +19,16 @@ First we will need to add the <a href="/docs/router.html"><strong>Router</strong
 <blockquote>
 <p>We will be using the messageid as a parameter to fetch and show each individual message.</p>
 </blockquote>
-<p><img src="/docs/docs/assets/firsttutorial_routing2.gif" alt="Routing"></p>
+<p><img src="/docs/assets/firsttutorial_routing2.gif" alt="Routing"></p>
 <p>Starting with the <strong>Home Route</strong> we will add a <a href="query.md"><strong>Query</strong></a> component to get the data from our Graphql DB endpoint. Then to it we add a <a href="replicatelist.md"><strong>ReplicateList</strong></a> which will ease our job by replicating, with the help of it's parent, each instance of data (<strong>Message</strong>) received.
 <br><br>
 For each <strong>Message</strong> we will want to show its <strong>Title</strong> (which will be a link to the individual message) and <strong>Date</strong>, so we add the following components:</p>
-<p><img src="/docs/docs/assets/firsttutorial_home.png" alt="Home"></p>
+<p><img src="/docs/assets/firsttutorial_home.png" alt="Home"></p>
 <p>For the <strong>Message Route</strong> we will want also a <a href="query.md"><strong>Query</strong></a> component to fetch our <strong>Message</strong> and each component to display its previous data and the <strong>Description</strong> aswell:</p>
-<p><img src="/docs/docs/assets/firsttutorial_message.png" alt="Message"></p>
+<p><img src="/docs/assets/firsttutorial_message.png" alt="Message"></p>
 <p>At last the <strong>PostMessage Route</strong> as our form to submit new Messages, will have a <a href="/docs/state.html"><strong>State</strong></a> component with a child <a href="form.md"><strong>Form</strong></a> and
 this will have the following components for input:</p>
-<p><img src="/docs/docs/assets/firsttutorial_postmessage.png" alt="PostMessage"></p>
+<p><img src="/docs/assets/firsttutorial_postmessage.png" alt="PostMessage"></p>
 <p>So to wrap our structure, this is all we will need.
 <br><br><br></p>
 </span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div></div></body></html>

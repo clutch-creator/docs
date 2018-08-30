@@ -40,12 +40,12 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="create-a-new-project"></a><a href="#create-a-new-project" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new Project</h2>
 <p>In Dashboard you can simply create a new project by giving it a name.</p>
-<p><img src="/docs/docs/assets/firsttutorial.gif" alt="Create Project">
+<p><img src="/docs/assets/firsttutorial.gif" alt="Create Project">
 <br><br></p>
 <h2><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h2>
 <p>Let's start by structuring our App.
 First we will need to add the <a href="/docs/router.html"><strong>Router</strong></a> component to handle all the different paths. And for each path we will want a <a href="/docs/route.html"><strong>Route</strong></a> component.</p>
-<p><img src="/docs/docs/assets/firsttutorial_routing1.gif" alt="Routing"></p>
+<p><img src="/docs/assets/firsttutorial_routing1.gif" alt="Routing"></p>
 <p>For default the component <a href="/docs/router.html"><strong>Router</strong></a> has two <a href="/docs/route.html"><strong>Route</strong></a> components as <strong>defaultChildren</strong>.</p>
 <blockquote>
 <p>You can delete the default children of each created component and add new <strong>Route</strong> components, or configure them.</p>
@@ -64,16 +64,16 @@ First we will need to add the <a href="/docs/router.html"><strong>Router</strong
 <blockquote>
 <p>We will be using the messageid as a parameter to fetch and show each individual message.</p>
 </blockquote>
-<p><img src="/docs/docs/assets/firsttutorial_routing2.gif" alt="Routing"></p>
+<p><img src="/docs/assets/firsttutorial_routing2.gif" alt="Routing"></p>
 <p>Starting with the <strong>Home Route</strong> we will add a <a href="query.md"><strong>Query</strong></a> component to get the data from our Graphql DB endpoint. Then to it we add a <a href="replicatelist.md"><strong>ReplicateList</strong></a> which will ease our job by replicating, with the help of it's parent, each instance of data (<strong>Message</strong>) received.
 <br><br>
 For each <strong>Message</strong> we will want to show its <strong>Title</strong> (which will be a link to the individual message) and <strong>Date</strong>, so we add the following components:</p>
-<p><img src="/docs/docs/assets/firsttutorial_home.png" alt="Home"></p>
+<p><img src="/docs/assets/firsttutorial_home.png" alt="Home"></p>
 <p>For the <strong>Message Route</strong> we will want also a <a href="query.md"><strong>Query</strong></a> component to fetch our <strong>Message</strong> and each component to display its previous data and the <strong>Description</strong> aswell:</p>
-<p><img src="/docs/docs/assets/firsttutorial_message.png" alt="Message"></p>
+<p><img src="/docs/assets/firsttutorial_message.png" alt="Message"></p>
 <p>At last the <strong>PostMessage Route</strong> as our form to submit new Messages, will have a <a href="/docs/state.html"><strong>State</strong></a> component with a child <a href="form.md"><strong>Form</strong></a> and
 this will have the following components for input:</p>
-<p><img src="/docs/docs/assets/firsttutorial_postmessage.png" alt="PostMessage"></p>
+<p><img src="/docs/assets/firsttutorial_postmessage.png" alt="PostMessage"></p>
 <p>So to wrap our structure, this is all we will need.
 <br><br></p>
 <h2><a class="anchor" aria-hidden="true" id="data"></a><a href="#data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data</h2>
