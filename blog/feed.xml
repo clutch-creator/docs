@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>Shift University Blog</title>
-        <link>https://shift-studio.github.io/docs/blog</link>
+        <link>https://docs.shift.studio/blog</link>
         <description>The best place to stay up-to-date with the latest Shift University news and events.</description>
         <lastBuildDate>Mon, 19 Feb 2018 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Shift University Blog</title>
-            <url>https://shift-studio.github.io/docs/img/shift-logo.svg</url>
-            <link>https://shift-studio.github.io/docs/blog</link>
+            <url>https://docs.shift.studio/img/shift-logo.svg</url>
+            <link>https://docs.shift.studio/blog</link>
         </image>
         <copyright>Copyright © 2018 Shift</copyright>
         <item>
             <title><![CDATA[Launch of Docusaurus]]></title>
-            <link>https://shift-studio.github.io/docs/blog/2018/02/19/welcome.html</link>
-            <guid>https://shift-studio.github.io/docs/blog/2018/02/19/welcome.html</guid>
+            <link>https://docs.shift.studio/blog/2018/02/19/welcome.html</link>
+            <guid>https://docs.shift.studio/blog/2018/02/19/welcome.html</guid>
             <pubDate>Mon, 19 Feb 2018 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>Docs are officially launched! Bear with us as we populate these pages with information. These are setup as a public repo so if something is missing, and you feel comfortable, feel free to submit a Pull Request.</p>
 ]]></description>
