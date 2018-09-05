@@ -44,61 +44,56 @@
 <br><br></p>
 <h2><a class="anchor" aria-hidden="true" id="structure"></a><a href="#structure" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structure</h2>
 <p>Let's start by structuring our App.
-First we will need to add the <a href="/docs/router.html"><strong>Router</strong></a> component to handle all the different paths. And for each path we will want a <a href="/docs/route.html"><strong>Route</strong></a> component.</p>
-<p><img src="/docs/assets/firsttutorial_routing1.gif" alt="Routing"></p>
-<p>For default the component <a href="/docs/router.html"><strong>Router</strong></a> has two <a href="/docs/route.html"><strong>Route</strong></a> components as <strong>defaultChildren</strong>.</p>
-<blockquote>
-<p>You can delete the default children of each created component and add new <strong>Route</strong> components, or configure them.</p>
-</blockquote>
-<p>Now we configure each <a href="/docs/route.html"><strong>Route</strong></a> component. On the <strong>component settings</strong> tab we set the <code>Label</code>, <code>Path</code> and <code>Default path</code> settings for each of them:</p>
+First we will need to add the <a href="/docs/router.html"><strong>Router</strong></a> component to handle all the different paths. For default the component <a href="/docs/router.html"><strong>Router</strong></a> has two <a href="/docs/route.html"><strong>Route</strong></a> components as <strong>defaultChildren</strong>. You can delete the default children and for each path add new <a href="/docs/route.html"><strong>Route</strong></a> components.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image1.png" /></p>
+<p>Now we configure each <a href="/docs/route.html"><strong>Route</strong></a> component. On the <strong>component editor</strong> tab, under the Settings header we set the <code>Label</code>, <code>Path</code> and <code>Default path</code> settings for each <a href="/docs/route.html"><strong>Route</strong></a>:</p>
 <table>
 <thead>
-<tr><th>Label</th><th>Path</th><th>Default Path</th></tr>
+<tr><th>Label</th><th>Path</th><th>Default Path</th><th>Exact Path</th></tr>
 </thead>
 <tbody>
-<tr><td>Home</td><td>/</td><td></td></tr>
-<tr><td>Message</td><td>/message/:messageid</td><td>/message/default</td></tr>
-<tr><td>PostMessage</td><td>/newMessage</td><td></td></tr>
+<tr><td>Home</td><td>/</td><td></td><td>tick</td></tr>
+<tr><td>Message</td><td>/message/:messageid</td><td>/message/default</td><td></td></tr>
+<tr><td>PostMessage</td><td>/newMessage</td><td></td><td></td></tr>
 </tbody>
 </table>
 <blockquote>
 <p>We will be using the messageid as a parameter to fetch and show each individual message.</p>
 </blockquote>
-<p><img src="/docs/assets/firsttutorial_routing2.gif" alt="Routing"></p>
-<p>Starting with the <strong>Home Route</strong> we will add a <a href="query.md"><strong>Query</strong></a> component to get the data from our Graphql DB endpoint. Then to it we add a <a href="replicatelist.md"><strong>ReplicateList</strong></a> which will ease our job by replicating, with the help of it's parent, each instance of data (<strong>Message</strong>) received.
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image2.png" /></p>
+<p>Starting with the <strong>Home Route</strong> we will add a <a href="query.md"><strong>Query</strong></a> component to get the data from our Graphql DB endpoint. Then to it we add a <a href="/docs/replicate-list.html"><strong>ReplicateList</strong></a> which will ease our job by replicating, with the help of it's parent, each instance of data (<strong>Message</strong>) received.
 <br><br>
 For each <strong>Message</strong> we will want to show its <strong>Title</strong> (which will be a link to the individual message) and <strong>Date</strong>, so we add the following components:</p>
-<p><img src="/docs/assets/firsttutorial_home.png" alt="Home"></p>
-<p>For the <strong>Message Route</strong> we will want also a <a href="query.md"><strong>Query</strong></a> component to fetch our <strong>Message</strong> and each component to display its previous data and the <strong>Description</strong> aswell:</p>
-<p><img src="/docs/assets/firsttutorial_message.png" alt="Message"></p>
-<p>At last the <strong>PostMessage Route</strong> as our form to submit new Messages, will have a <a href="/docs/state.html"><strong>State</strong></a> component with a child <a href="form.md"><strong>Form</strong></a> and
-this will have the following components for input:</p>
-<p><img src="/docs/assets/firsttutorial_postmessage.png" alt="PostMessage"></p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image3.png" /></p>
+<p>For the <strong>Message Route</strong> we will want also a <a href="query.md"><strong>Query</strong></a> component to fetch our <strong>Message</strong> and each component to display its previous data and the <strong>Description</strong> as well:</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image4.png" />)</p>
+<p>At last the <strong>PostMessage Route</strong> as our form to submit new Messages, will have a <a href="/docs/state.html"><strong>LocalState</strong></a> component with a child <a href="form.md"><strong>Form</strong></a> and this will have the following components for input:</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image5.png" /></p>
 <p>So to wrap our structure, this is all we will need.
 <br><br></p>
 <h2><a class="anchor" aria-hidden="true" id="data"></a><a href="#data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data</h2>
 <p>Someone at the back-end will have to take care of the DB. Well, we can be that someone.</p>
-<p>For this tutorial we will use the <strong>GraphCool</strong> interface: <a href="https://www.graph.cool"><strong>Graph.cool</strong></a></p>
-<p>Open Graphcool console and set up a new project with the following <code>Type</code>:</p>
-<pre><code class="hljs"><span class="hljs-selector-tag">type</span> <span class="hljs-selector-tag">Message</span> @<span class="hljs-selector-tag">model</span> {
-  <span class="hljs-attribute">date</span>: DateTime!
-  <span class="hljs-attribute">description</span>: String!
-  <span class="hljs-attribute">id</span>: ID! <span class="hljs-variable">@isUnique</span>
-  <span class="hljs-attribute">title</span>: String!
-}
-</code></pre>
-<p>Grab the endpoint url so we can set it up in our App.
-<br>
-Back to <strong>Shift</strong> we go to the <strong>Project Configuration</strong> tab and insert the url endpoint into the <strong>GraphQL Settings</strong><br>(<code>Code-&gt;Settings-&gt;GraphQL</code>)</p>
-<p>Our connection is ready. Now we need two <a href="queries.md"><strong>Queries</strong></a> and one <a href="mutations.md"><strong>Mutation</strong></a>:</p>
+<p>For this tutorial we will use the <strong>GraphCool</strong> interface.  Go to <a href="https://www.graph.cool"><strong>Graph.cool</strong></a> and create an account.  Login to your account, create a new project called 'Messages' and go to the Graphcool console. It should look like this.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image6.png" /></p>
+<p>Ignoring the file and user <code>Types</code>, add a new type 'Message'. You will notice that Graphcool automatically gives 'Message' an unique id field. Add the fields: date, description and title.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image7.png" /></p>
+<p>Your type should then look like this:</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image8.png" /></p>
+<p>Now we need to connect this to your app in Shift.  To do this, copy the simple API endpoint url under endpoints in Graphcool and paste this into the <strong>GraphQL Settings</strong> under the <strong>Project Configuration</strong> tab in <strong>Shift</strong>. Remember to save.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image9.png" /></p>
+<p><br>
+Our connection is ready. Now we need two <a href="queries.md"><strong>Queries</strong></a> and one <a href="mutations.md"><strong>Mutation</strong></a>.</p>
 <ul>
 <li>query <strong>allMessages</strong> - all the messages to be shown in the Messages feed.</li>
 <li>query <strong>message</strong> - the individual message fetched using it's <code>id</code>.</li>
-<li>mutation <strong>postMessage</strong> - post messages.</li>
+<li>mutation <strong>addMessage</strong> - add messages.</li>
 </ul>
 <blockquote>
-<p>In <strong>Code Mode</strong> you can not only add this queries and mutation but also use the <a href="https://github.com/graphql/graphiql"><strong>GraphiQL</strong></a> interface to do it. All this inside <strong>Shift</strong>.</p>
+<p>In <strong>Code</strong> you can not only add these queries and mutation but also use the <a href="https://github.com/graphql/graphiql"><strong>GraphiQL</strong></a> interface to do it. All this inside <strong>Shift</strong>.</p>
 </blockquote>
+<p>Under the <strong>Code</strong> tab, right click on files and add three separate graphql query files. Press enter to save the file and remember to use the .gql extension on each file. Your file structure should look like:</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image10.png" /></p>
+<p>Insert the below queries and mutation into their respective files.</p>
 <pre><code class="hljs"><span class="hljs-attribute">query</span> allMessages {
   <span class="hljs-section">allMessages</span> {
     <span class="hljs-attribute">id</span>
@@ -125,7 +120,7 @@ Back to <strong>Shift</strong> we go to the <strong>Project Configuration</stron
       description: $description
       <span class="hljs-built_in">date</span>: $<span class="hljs-built_in">date</span>
       <span class="hljs-built_in">title</span>: $<span class="hljs-built_in">title</span>) {
-            id
+        id
             <span class="hljs-built_in">title</span>
             description
             <span class="hljs-built_in">date</span>
@@ -133,18 +128,17 @@ Back to <strong>Shift</strong> we go to the <strong>Project Configuration</stron
   }
 </code></pre>
 <blockquote>
-<p>Each <strong>Query</strong> and <strong>Mutation</strong> needs to be added separately</p>
+<p>Note that each <strong>Query</strong>(queries.md) and <strong>Mutation</strong>(mutations.md) needs to be added to its own separate file.</p>
 </blockquote>
+<p>You can check that these are all working correctly using the GraphiQL platform. For the message query and addMessage mutation you will need to provide the query variables.</p>
 <p>Another step complete, it's time to create data.
 <br><br></p>
 <h2><a class="anchor" aria-hidden="true" id="content"></a><a href="#content" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Content</h2>
-<p>Our app runs on data, receives and submits <strong>Messages</strong>, so let's link it all together. <br>
-In Shift's GraphQL interface we are going to &quot;manually&quot; submit messages so we can link data to it's desired place.
-<br> (<code>Code-&gt;Settings-&gt;GraphQL</code>)</p>
-<p>In our previously created <code>addMessage</code> mutation we will insert messages. At the bottom in <code>Query Variables</code> in a json format
+<p>Our app runs on data, receives and submits <strong>Messages</strong>, so let's link it all together. <br></p>
+<p>In the GraphiQL interface we can &quot;manually&quot; submit messages to the database. To do this, open the previously created <code>addMessage</code> mutation from the addMessage.gql file. At the bottom in <code>Query Variables</code> in a json format
 we add:</p>
 <pre><code class="hljs">{
-  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"A Pretty Message Title"</span>,
+  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"A Random Message Title"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"a random description"</span>,
   <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2018-05-03"</span>
 }
@@ -152,106 +146,144 @@ we add:</p>
 <blockquote>
 <p>In a first instance we insert the date for the messages submitted manually, but later on this will be done automatically by our app.</p>
 </blockquote>
-<p>From just hitting the play button at the top of the GraphiQL interface we can see that our Mutation query went through and have the
-returning information aswell as the id generated for our message.</p>
+<p>From just hitting the play button at the top of the GraphiQL interface we can see that our Mutation query went through and we have the returning information as well as the id generated for our message.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image11.png" /></p>
 <p>Now we have messages in our DB, it's time to see it.</p>
 <h3><a class="anchor" aria-hidden="true" id="home"></a><a href="#home" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Home</h3>
-<p>Back in <strong>Designer Mode</strong>, we go to the Route we created as <strong>Home</strong> and select the previously created <strong>Query</strong> component. On the
-configuration of the <strong>Query</strong> we set the <code>Query</code> option to <strong>allMessages</strong> (our <code>Query</code> defined in Code Mode).</p>
-<p>In <strong>ReplicateList's</strong> child, set the Configuration option <code>Item Name</code> to <strong>message</strong>, this will define how we reference each data item.
-Set <code>Each Item Key</code> to <strong>message.id</strong> so it uses the message id as key for each data item. Then in <strong>Props Flow</strong> tab select the <strong>allMessages</strong> query and <code>Add new link</code> with <code>Data</code> type, this will bind allMessages received to this <strong>ReplicateList</strong>.</p>
-<p>Now to set each message title and date to each righteous place we select the <strong>Text</strong> child of <strong>ReplicateList</strong> and in the PropsFlow tab we
-bind it to <code>__message__ -&gt; __title__</code> and select the <code>Link</code> type to Content. Do the same for the <strong>Date</strong> child but don't forget to set the <code>Link</code> type to <strong>Date</strong>.</p>
-<p>Till this step, every change you've done to your app had the proper visual update in <strong>Canvas</strong>, it's a good practice to take advantage of this Shift's feature to debug everything that's happening in real-time.</p>
+<p>Go to the Route we created as <strong>Home</strong> and select the previously created <strong>Query</strong>(queries.md) component. On the <strong>Query</strong>(queries.md) settings we set the <code>Query</code> option to <strong>allMessages</strong> (our <code>Query</code> defined in Code).</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image12.png" /></p>
+<p>In the settings for the <strong>ReplicateList</strong>(replicate-list.md) component (under the <strong>allMessages</strong> query), set the <code>Item Name</code> to <strong>message</strong> and <code>Each Item Key</code> to <strong>message.id</strong> so it uses the message id as key for each data item.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image13.png" /></p>
+<p>Then set the <code>Data</code> by clicking on <code>Data</code> --&gt; <code>Bind values</code> --&gt; <code>Value</code> --&gt; click on the drop down menu and scroll down to <strong>allMessages</strong>. When you select <strong>allMessages</strong> you should see some text appear on your page.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image14.png" /></p>
+<p>You will also see that these messages have been added as props by going to the <strong>Props and Binding</strong> tab. Remember that these are the props passing to the <strong>ReplicateList</strong>(replicate-list.md) component and therefore these will only show if you view <strong>Props and Binding</strong> with that component selected.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image15.png" /></p>
+<p>Now to set the title and date for each message we select the <strong>Text</strong>(text.md) child of <strong>ReplicateList</strong>(replicate-list.md), go to the component settings then set the <code>Content</code> by clicking on <code>Content</code> --&gt; <code>Bind values</code> --&gt; <code>Value</code> --&gt; click on the drop down menu and scroll down to <strong>message</strong>. Open <strong>message</strong> and select <strong>title</strong>. When you select <strong>title</strong> each message title should now appear on your page.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image16.png" /></p>
+<p>Go ahead and do the same for the <strong>Date</strong>(date.md) child of <strong>ReplicateList</strong>(replicate-list.md) except, instead of <code>Content</code> in the settings, select <code>Date</code> and bind the <code>Value</code> to  <strong>message</strong>, <strong>date</strong>.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image17.png" /></p>
 <p>In our plan there was a link that would take us to each individual message, and since we forgot to add it on purpose, let's see how to quickly shortcut and deal with it in Shift.</p>
-<p>We add a <strong>Link</strong> component as child of the <strong>ReplicateList</strong> and then we drag the <strong>Text</strong> component (which is our message title) into the  it. In <strong>Link</strong> Configuration set the <code>Link</code> option to <strong>/message/${props.message.id}</strong>. This will set the link path to our <strong>Message</strong> Route with the message <code>id</code> from the <strong>message</strong> previously received from the <strong>Query</strong> and fed from the <strong>ReplicateList</strong>.</p>
+<p>Add a <strong>Link</strong>(link.md) component as a child of <strong>ReplicateList</strong>(replicate-list.md) and then drag the <strong>Text</strong>(text.md) component (which is our message title) into  it. You will need to delete the text component that apears by default when you add a <strong>Link</strong>(link.md) component.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image18.png" />)</p>
+<p>In the <strong>Link</strong>(link.md) configuration settings we set the link path by clicking <code>Link</code> --&gt; <code>Bind values</code> --&gt; <code>Expression</code> and inserting the string <code>/message/${this.props.item.id}</code>. This will set the link path to our <strong>Message</strong> Route with the message <code>id</code> from the <strong>message</strong> previously received from the <strong>Query</strong>(queries.md) and fed from the <strong>ReplicateList</strong>(replicate-list.md).</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image19.png" /></p>
 <blockquote>
-<p>As you have noticed the Component-Tree works with Components and Html elements respecting the order of the well known DOM Tree. That's why the <strong>Link</strong> is added as a parent of <strong>Text</strong> and not the other way around.</p>
+<p>As you will have noticed the Component-Tree works with Components and Html elements respecting the order of the well known DOM Tree. That's why the <strong>Link</strong>(link.md) is added as a parent of <strong>Text</strong>(text.md) and not the other way around.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="message"></a><a href="#message" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Message</h3>
-<p>Since we are routing every message by its <code>id</code> as a parameter defined in this <strong>Message</strong> route (<code>/message/:messageid</code>), set a messageid default path in configuration. With the default message set it's now easier to connect all the data to each field.</p>
-<p>We need to tell our <strong>Query</strong> to deal with it.</p>
-<p>In <strong>Query</strong> configuration set the <code>Query</code> option as <strong>message</strong> and the <code>Arguments</code> as:</p>
+<p>We are routing every message by its <code>id</code> as a parameter defined in this <strong>Message</strong> Route (<code>/message/:messageid</code>). Now we need to tell our <strong>Message</strong> Route <strong>Query</strong>(queries.md) to deal with it.</p>
+<p>In the <strong>Query</strong>(queries.md) configuration settings set the <code>Query</code> option as <strong>message</strong> and for the <code>Arguments</code> create a module, open in a new tab and set the 'return' to:</p>
 <pre><code class="hljs">{
-    id: props<span class="hljs-selector-class">.flowProps</span><span class="hljs-selector-class">.route</span><span class="hljs-selector-class">.params</span><span class="hljs-selector-class">.messageid</span>
+    id: this<span class="hljs-selector-class">.props</span><span class="hljs-selector-class">.route</span><span class="hljs-selector-class">.params</span><span class="hljs-selector-class">.messageid</span>
 }
 </code></pre>
-<p>&quot;<strong>Query</strong> deal with it !&quot; we said.</p>
-<p>Then just select each field for <strong>title</strong>, <strong>description</strong> and <strong>date</strong> and bind them in <strong>Props Flow</strong> tab like we did before.</p>
+<p>&quot;<strong>Query</strong>(queries.md) deal with it!&quot;, we said.</p>
+<p>Then simply bind the 'Content' and 'Date' in the settings for <strong>title</strong>, <strong>description</strong> and <strong>date</strong> like we did before. For a reminder go to each component's settings and set the <code>Content</code> or <code>Date</code> by clicking <code>Bind values</code> --&gt; <code>Value</code> --&gt; and scrolling the drop down menu until you find the field you would like to bind.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image20.png" /></p>
 <blockquote>
 <p><strong>Tip:</strong> go to the <strong>Home</strong> Route and start the preview, see how each link takes you to each individual message path and presentation.</p>
 </blockquote>
 <p>We are done here. How quick was it?</p>
 <h3><a class="anchor" aria-hidden="true" id="postmessage"></a><a href="#postmessage" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PostMessage</h3>
-<p>For the <strong>PostMessage</strong> Route we will need to configure the <strong>Local State</strong> component, and <strong>Actions</strong> for it.</p>
-<p>In our <strong>Local State</strong> component in <strong>State Settings</strong> tab we set the default state:</p>
+<p>For the <strong>PostMessage</strong> Route we will need to configure the <strong>Local State</strong>(state.md) component, and the <strong>Actions</strong> for it.</p>
+<p>In our <strong>Local State</strong>(state.md) component settings we set the <code>Default State</code> by creating a module, opening in a new tab and setting the 'return' to:</p>
 <pre><code class="hljs">{
   <span class="hljs-attribute">title</span>: <span class="hljs-string">""</span>,
-  description: <span class="hljs-string">""</span>
+  description: <span class="hljs-string">""</span> 
 }
 </code></pre>
-<p>And add two new <strong>Actions</strong>:</p>
-<p>Name: changeField
+<p>Remember to save your changes to this file (ctrl, s).</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image21.png" /></p>
+<p>To add <strong>Actions</strong> to your <strong>Local State</strong>(state.md) simply click 'Add action' under the <strong>Actions</strong> in <strong>Local State</strong>(state.md) settings. This will prompt you for the 'New action name'.</p>
+<p>Add the following Action for every change in the target values.</p>
+<p>New action name: changeField
 Template: Synchronous state change</p>
-<pre><code class="hljs"><span class="hljs-builtin-name">export</span><span class="hljs-built_in"> default </span>({ state, event }) =&gt; {
-  event.preventDefault();
-
-  return Object.assign({}, state, {
-    [event.target.name]:event.target.value,
-  });
+<p>Remember to hit 'enter' to save your changes.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image22.png" /></p>
+<p>Click on the action to open it in a new tab.  Insert the following code and save.</p>
+<pre><code class="hljs"><span class="hljs-builtin-name">export</span><span class="hljs-built_in"> default </span>function (event) {
+  this.setLocalState(Object.assign({}, this.localState, {
+    [event.target.name]: event.target.value
+  }));
 }
 </code></pre>
-<blockquote>
-<p>Action for every change in the target values.</p>
-</blockquote>
+<p>The next Action allows us to submit the data gathered from the <strong>Form</strong>, set the state back to it's default and send the user to the newly created message. You will see that the <strong>date</strong> property is added to the variables fetched from the inputs.</p>
 <p>Name: onSubmit
 Type: Do Mutation</p>
-<pre><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ({ state, event, eventComponentProps, history }) =&gt; {
-  event.preventDefault();
+<pre><code class="hljs"><span class="hljs-keyword">import</span> MUTATION <span class="hljs-keyword">from</span> <span class="hljs-string">'shift-files/addMessage.gql'</span>;
+<span class="hljs-keyword">import</span> { mutate } <span class="hljs-keyword">from</span> <span class="hljs-string">'shift-apollo-client'</span>;
+<span class="hljs-keyword">import</span> shiftHistory <span class="hljs-keyword">from</span> <span class="hljs-string">'shift-history'</span>;
+<span class="hljs-keyword">import</span> query <span class="hljs-keyword">from</span> <span class="hljs-string">'shift-files/allMessages.gql'</span>;
 
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">async</span> ({ getState, setState, mutate, getMutation }) =&gt; {
-    setState(<span class="hljs-built_in">Object</span>.assign({}, getState(), {
-      <span class="hljs-attr">loading</span>: <span class="hljs-literal">true</span>,
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.setLocalState(<span class="hljs-built_in">Object</span>.assign({}, <span class="hljs-keyword">this</span>.localState, {
+    <span class="hljs-attr">loading</span>: <span class="hljs-literal">true</span>,
+  }));
+  
+  <span class="hljs-keyword">try</span> {
+
+    <span class="hljs-keyword">this</span>.localState.date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString()
+    
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> mutate({
+      <span class="hljs-attr">mutation</span>: MUTATION,
+      <span class="hljs-attr">variables</span>: <span class="hljs-keyword">this</span>.localState,
+      <span class="hljs-comment">// update list of messages on home page</span>
+      update: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">store, { data: { createMessage } }</span>) </span>{
+        
+        <span class="hljs-keyword">try</span> {
+          
+          <span class="hljs-keyword">const</span> data = store.readQuery({ query });
+          data.allMessages.push(createMessage);
+          store.writeQuery({ query, data })
+
+        } <span class="hljs-keyword">catch</span> (e) {
+          <span class="hljs-keyword">this</span>.setLocalState(<span class="hljs-built_in">Object</span>.assign({}, <span class="hljs-keyword">this</span>.localState, {
+            <span class="hljs-attr">error</span>: e,
+            <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
+          }));
+        }
+      }
+    });
+
+    <span class="hljs-keyword">this</span>.setLocalState(<span class="hljs-built_in">Object</span>.assign({}, <span class="hljs-keyword">this</span>.localState, {
+      <span class="hljs-attr">title</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">description</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">error</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
     }));
 
-    <span class="hljs-keyword">try</span> {
-      <span class="hljs-comment">// set the date for the submitted message</span>
-      <span class="hljs-keyword">const</span> addDateVariable = <span class="hljs-built_in">Object</span>.assign({}, getState(), {
-        <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString(),
-      });
+    <span class="hljs-comment">// change path to the newly created message</span>
+    shiftHistory.push(<span class="hljs-string">`/message/<span class="hljs-subst">${response.data.createMessage.id}</span>`</span>)
 
-      <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> mutate({
-        <span class="hljs-attr">mutation</span>: getMutation(<span class="hljs-string">'addMessage'</span>),
-        <span class="hljs-attr">variables</span>: addDateVariable
-      });
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-keyword">this</span>.setLocalState(<span class="hljs-built_in">Object</span>.assign({}, <span class="hljs-keyword">this</span>.localState, {
+      <span class="hljs-attr">error</span>: e,
+      <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
+    }));
+  }
+};
 
-      setState(<span class="hljs-built_in">Object</span>.assign({}, getState(), {
-        <span class="hljs-attr">title</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">description</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">error</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
-      }));
-
-      <span class="hljs-comment">// change path to the newly created message</span>
-      history.push(<span class="hljs-string">`/message/<span class="hljs-subst">${response.data.createMessage.id}</span>`</span>);
-    } <span class="hljs-keyword">catch</span> (e) {
-      setState(<span class="hljs-built_in">Object</span>.assign({}, getState(), {
-        <span class="hljs-attr">error</span>: e,
-        <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
-      }));
-    }
-  };
+</code></pre>
+<p>For information on the above code visit the <a href="https://s3.amazonaws.com/apollo-docs-1.x/index.html"><strong>Apollo React docs</strong></a>. We note that these are not the latest version of the Apollo React docs and are working to update this.</p>
+<p>Now we need to link up the <strong>Form</strong> child components with the above actions.  To do this we go to each <strong>InputText</strong> configuration <code>Events</code> and add an 'onChange' event.  Insert the following code into the <code>Event Handler</code> which will open into a new tab.</p>
+<pre><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> eventHandler(<span class="hljs-keyword">event</span>) {
+  <span class="hljs-keyword">event</span><span class="hljs-variable">.preventDefault</span>();
+  <span class="hljs-comment">//-- Event Handler</span>
+  <span class="hljs-keyword">this</span><span class="hljs-variable">.props</span><span class="hljs-variable">.changeField</span>(<span class="hljs-keyword">event</span>);
+}
+</code></pre>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image23.png" /></p>
+<p>Now do the same to the <strong>InputButton</strong> by going to <code>Events</code>, adding an 'onClick' event and inserting the following code into the <code>Event Handler</code> which will open into a new tab.</p>
+<pre><code class="hljs"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eventHandler</span>(<span class="hljs-params">event</span>) </span>{
+  event.preventDefault();
+  <span class="hljs-comment">//-- Event Handler</span>
+  <span class="hljs-keyword">this</span>.props.onSubmit();
 }
 
 </code></pre>
-<blockquote>
-<p>Action for submitting the data gathered from the <strong>Form</strong>, setting the state back to it's default and send the user to the newly created
-message. The <strong>date</strong> property is added to the variables fetched from the inputs.</p>
-</blockquote>
-<p>Now in the <strong>Form</strong> component's configuration we add the event <strong>onSubmit</strong> with the <strong>onSubmit</strong> action created.</p>
-<p>For the <strong>title</strong> and <strong>description</strong> inputs we go to each configuration and set the <code>Name</code> option as <code>title</code> and <code>description</code> respectively
-and add the Event <strong>onChange</strong> to the <strong>changeField</strong> Action. For each of them in the PropsFlow tab add a Link for each property with the type <strong>Value</strong>.</p>
-<p>For the button input we set the <code>Value</code> and <code>Type</code> as <strong>Submit</strong>.</p>
+<p>Alternatively, instead of adding the above <code>Event</code> to <strong>InputButton</strong>, you can add it as an 'onSubmit' <code>Event</code> in the <strong>Form</strong> configuration. Either way will work.</p>
+<p>For the final step, we need to bind the <strong>title</strong> and <strong>description</strong> input fields. To do this we go to the configuration settings for each <strong>InputText</strong> field and set the <code>Name</code> and <code>Value</code> options as <code>title</code> and <code>description</code> respectively.</p>
+<p><img style='padding: 20px' src="/docs/assets/tutorial-image24.png" /></p>
 <p><strong>It still doesn't look pretty, but it works! Congratulations!</strong>
 <br><br></p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="qs-05-routes.html">← Routes</a><a class="docs-next button" href="dashboard.html">Dashboard →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#the-plan">The Plan</a></li><li><a href="#create-a-new-project">Create a new Project</a></li><li><a href="#structure">Structure</a></li><li><a href="#data">Data</a></li><li><a href="#content">Content</a><ul class="toc-headings"><li><a href="#home">Home</a></li><li><a href="#message">Message</a></li><li><a href="#postmessage">PostMessage</a></li></ul></li></ul></nav></div></div></body></html>
