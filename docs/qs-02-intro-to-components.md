@@ -25,7 +25,7 @@ Simply click a `Block` component to add it to your app, or drag it into your Can
 As you can see, your Components Tree now has one item: `Block`. Blocks, like divs, don't really do much on their own, so lets add some more Components.
 
 ## Nesting Components
-With your block selected in the tree, open your Components Drawer again (feel free to hit <kbd>a</kbd> on your keyboard to quickly toggle the Components Drawer) and click on Text. Alternatively, you can drag the `Text` component from the Drawer into the `Block` in the tree or canvas.
+With your block selected in the tree, open your Components Drawer again (feel free to hit `a` on your keyboard to quickly toggle the Components Drawer) and click on Text. Alternatively, you can drag the `Text` component from the Drawer into the `Block` in the tree or canvas.
 <details open>
   <summary>Fig 3</summary>
   <img style='padding: 20px' src="/docs/assets/add-text-component.gif" />
