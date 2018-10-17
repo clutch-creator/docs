@@ -5,7 +5,7 @@ sidebar_label: Props
 ---
 `Props is shorthand for properties. Props are how components talk to each other. `
 
-It is possible to customize components with different properties when they are created and these are called __Props__. This enables the creation of the same component with different propertiesreusing it for different ends.
+It is possible to customize components with different properties when they are created and these are called __Props__. This enables the creation of the same component with different properties reusing it for different ends.
 
 If you’re not at all familiar with __React__ you should know that __Props__ flow from a parent component downwards to it's children.
 
