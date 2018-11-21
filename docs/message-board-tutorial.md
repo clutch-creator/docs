@@ -27,7 +27,7 @@ A __Message__ will have the following properties:
 __What we want to happen?__
 - Messages to be shown at the Message Dashboard.
 - Messages to be submitted through Message Form.
-- Store the Messages in a db (Graphcool used in this tutorial as the endpoint).
+- Store the Messages in a database (Graphcool used in this tutorial as the endpoint).
 - If a Message Title is clicked, redirect to the individual Message.
 <br><br>
 
@@ -43,7 +43,7 @@ In Dashboard you can simply create a new project by giving it a name.
 Let's start by structuring our App.
 First we will need to add the [__Router__](router.md) component to handle all the different paths. For default the component [__Router__](router.md) has two [__Route__](route.md) components as __defaultChildren__. You can delete the default children and for each path add new [__Route__](route.md) components.
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image1.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image1.png" />
 
 Now we configure each [__Route__](route.md) component. On the __component editor__ tab, under the Settings header we set the `Label`, `Path` and `Default path` settings for each [__Route__](route.md): 
 
@@ -51,27 +51,29 @@ Now we configure each [__Route__](route.md) component. On the __component editor
 |-------------|---------------------|------------------|---------------|
 | Home        | /                   |                  | tick          |
 | Message     | /message/:messageid | /message/default |               |
-| PostMessage | /newMessage         |                  |               |
+| AddMessage  | /newMessage         |                  |               |
 
 > We will be using the messageid as a parameter to fetch and show each individual message.
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image2.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image2.png" />
 
 Starting with the __Home Route__ we will add a [__Query__](query.md) component to get the data from our Graphql DB endpoint. Then to it we add a [__ReplicateList__](replicate-list.md) which will ease our job by replicating, with the help of it's parent, each instance of data (__Message__) received. 
 <br><br>
 For each __Message__ we will want to show its __Title__ (which will be a link to the individual message) and __Date__, so we add the following components:
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image3.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image3.png" />
 
 For the __Message Route__ we will want also a [__Query__](query.md) component to fetch our __Message__ and each component to display its previous data and the __Description__ as well:
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image4.png" />)
+<img style='padding: 20px' src="/docs/assets/tutorial2-image4.png" />)
 
-At last the __PostMessage Route__ as our form to submit new Messages, will have a [__LocalState__](state.md) component with a child [__Form__](form.md) and this will have the following components for input:
+At last the __AddMessage Route__ as our form to submit new Messages, will have a [__LocalState__](state.md) component with a child [__Form__](form.md) and this will have the following components for input:
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image5.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image5.png" />
 
 So to wrap our structure, this is all we will need.
+
+<img style='padding: 20px' src="/docs/assets/tutorial2-full-structure.png" />
 <br><br>
 ## Data
 Someone at the back-end will have to take care of the DB. Well, we can be that someone.
@@ -80,7 +82,7 @@ For this tutorial we will use the __GraphCool__ interface.  Go to [__Graph.cool_
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image6.png" />
 
-Ignoring the file and user `Types`, add a new type 'Message'. You will notice that Graphcool automatically gives 'Message' an unique id field. Add the fields: date, description and title.  
+Ignoring the File and User `types`, add a new type 'Message'. You will notice that Graphcool automatically gives 'Message' an unique id field. Add the fields: date, description (string) and title (string).  
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image7.png" />
 
@@ -90,7 +92,7 @@ Your type should then look like this:
 
 Now we need to connect this to your app in Shift.  To do this, copy the simple API endpoint url under endpoints in Graphcool and paste this into the __GraphQL Settings__ under the __Project Configuration__ tab in __Shift__. Remember to save. 
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image9.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image9.png" />
 
 <br>
 Our connection is ready. Now we need two [__Queries__](queries.md) and one [__Mutation__](mutations.md).
@@ -146,7 +148,7 @@ mutation addMessage (
   }
 ```
 
-> Note that each __Query__(queries.md) and __Mutation__(mutations.md) needs to be added to its own separate file.
+> Note that each __Query__ and __Mutation__ needs to be added to its own separate file.
 
 You can check that these are all working correctly using the GraphiQL platform. For the message query and addMessage mutation you will need to provide the query variables.    
 
@@ -154,15 +156,15 @@ Another step complete, it's time to create data.
 <br><br>
 ## Content
 
-Our app runs on data, receives and submits __Messages__, so let's link it all together. <br> 
+Our app receives and submits __Messages__, so let's link it all together. <br> 
 
 In the GraphiQL interface we can "manually" submit messages to the database. To do this, open the previously created `addMessage` mutation from the addMessage.gql file. At the bottom in `Query Variables` in a json format
 we add:
 
 ```
 {
-  "title": "A Random Message Title",
-  "description": "a random description",
+  "title": "A Message Title",
+  "description": "a description",
   "date": "2018-05-03"
 }
 ```
@@ -172,52 +174,52 @@ From just hitting the play button at the top of the GraphiQL interface we can se
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image11.png" />
 
-Now we have messages in our DB, it's time to see it.
+Now we have messages in our database, it's time to see it.
 
 ### Home
 
-Go to the Route we created as __Home__ and select the previously created __Query__(queries.md) component. On the __Query__(queries.md) settings we set the `Query` option to __allMessages__ (our `Query` defined in Code).
+Go to the Route we created as __Home__ and select the previously created __Query__ component. On the __Query__ settings we set the `Query` option to __allMessages__ (our `Query` defined in Code).
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image12.png" />
 
-In the settings for the __ReplicateList__(replicate-list.md) component (under the __allMessages__ query), set the `Item Name` to __message__ and `Each Item Key` to __message.id__ so it uses the message id as key for each data item. 
+In the settings for the __ReplicateList__ component (under the __allMessages__ query), set the `Item Name` to __item__ and `Each Item Key` to __item.id__ so it uses the message id as the key for each data item. 
 
-<img style='padding: 20px' src="/docs/assets/tutorial-image13.png" />
+<img style='padding: 20px' src="/docs/assets/tutorial2-image13.png" />
 
 Then set the `Data` by clicking on `Data` --> `Bind values` --> `Value` --> click on the drop down menu and scroll down to __allMessages__. When you select __allMessages__ you should see some text appear on your page.
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image14.png" />
 
-You will also see that these messages have been added as props by going to the __Props and Binding__ tab. Remember that these are the props passing to the __ReplicateList__(replicate-list.md) component and therefore these will only show if you view __Props and Binding__ with that component selected. 
+You will also see that these messages have been added as props by going to the __Props and Binding__ tab. Remember that these are the props passing to the __ReplicateList__ component and therefore these will only show if you view __Props and Binding__ with that component selected. 
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image15.png" />
 
-Now to set the title and date for each message we select the __Text__(text.md) child of __ReplicateList__(replicate-list.md), go to the component settings then set the `Content` by clicking on `Content` --> `Bind values` --> `Value` --> click on the drop down menu and scroll down to __message__. Open __message__ and select __title__. When you select __title__ each message title should now appear on your page.
+Now to set the title and date for each message we select the __Text__ child of __ReplicateList__, go to the component settings then set the `Content` by clicking on `Content` --> `Bind values` --> `Value` --> click on the drop down menu and scroll down to __message__. Open __message__ and select __title__. When you select __title__ each message title should now appear on your page.
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image16.png" />
 
-Go ahead and do the same for the __Date__(date.md) child of __ReplicateList__(replicate-list.md) except, instead of `Content` in the settings, select `Date` and bind the `Value` to  __message__, __date__.
+Go ahead and do the same for the __Date__ child of __ReplicateList__ except, instead of `Content` in the settings, select `Date` and bind the `Value` to  __message__, __date__.
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image17.png" />
 
 In our plan there was a link that would take us to each individual message, and since we forgot to add it on purpose, let's see how to quickly shortcut and deal with it in Shift.
 
-Add a __Link__(link.md) component as a child of __ReplicateList__(replicate-list.md) and then drag the __Text__(text.md) component (which is our message title) into  it. You will need to delete the text component that apears by default when you add a __Link__(link.md) component.
+Add a __Link__ component as a child of __ReplicateList__ and then drag the __Text__ component (which is our message title) into  it. You will need to delete the text component that apears by default when you add a __Link__ component.
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image18.png" />)
 
-In the __Link__(link.md) configuration settings we set the link path by clicking `Link` --> `Bind values` --> `Expression` and inserting the string `/message/${this.props.item.id}`. This will set the link path to our __Message__ Route with the message `id` from the __message__ previously received from the __Query__(queries.md) and fed from the __ReplicateList__(replicate-list.md).
+In the __Link__ configuration settings we set the link path by clicking `Link` --> `Bind values` --> `Expression` and inserting the string `/message/${this.props.item.id}`. This will set the link path to our __Message__ Route with the message `id` from the __message__ previously received from the __Query__ and fed from the __ReplicateList__.
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image19.png" />
 
->As you will have noticed the Component-Tree works with Components and Html elements respecting the order of the well known DOM Tree. That's why the __Link__(link.md) is added as a parent of __Text__(text.md) and not the other way around.
+>As you will have noticed the Component-Tree works with Components and Html elements respecting the order of the well known DOM Tree. That's why the __Link__ is added as a parent of __Text__ and not the other way around.
 
 
 ### Message
 
-We are routing every message by its `id` as a parameter defined in this __Message__ Route (`/message/:messageid`). Now we need to tell our __Message__ Route __Query__(queries.md) to deal with it.
+We are routing every message by its `id` as a parameter defined in this __Message__ Route (`/message/:messageid`). Now we need to tell our __Message__ Route __Query__ to deal with it.
 
-In the __Query__(queries.md) configuration settings set the `Query` option as __message__ and for the `Arguments` create a module, open in a new tab and set the 'return' to:
+In the __Query__ configuration settings set the `Query` option as __message__ and for the `Arguments` create a module, open in a new tab and set the 'return' to:
 
 ```
 {
@@ -225,7 +227,7 @@ In the __Query__(queries.md) configuration settings set the `Query` option as __
 }
 ```
 
-"__Query__(queries.md) deal with it!", we said.
+"__Query__ deal with it!", we said.
 
 Then simply bind the 'Content' and 'Date' in the settings for __title__, __description__ and __date__ like we did before. For a reminder go to each component's settings and set the `Content` or `Date` by clicking `Bind values` --> `Value` --> and scrolling the drop down menu until you find the field you would like to bind.
 
@@ -235,11 +237,11 @@ Then simply bind the 'Content' and 'Date' in the settings for __title__, __descr
 
 We are done here. How quick was it?
 
-### PostMessage
+### AddMessage
 
-For the __PostMessage__ Route we will need to configure the __Local State__(state.md) component, and the __Actions__ for it.
+For the __AddMessage__ Route we will need to configure the __Local State__ component, and the __Actions__ for it.
 
-In our __Local State__(state.md) component settings we set the `Default State` by creating a module, opening in a new tab and setting the 'return' to:
+In our __Local State__ component settings we set the `Default State` by creating a module, opening in a new tab and setting the 'return' to:
 
 ```
 {
@@ -251,7 +253,7 @@ Remember to save your changes to this file (ctrl, s).
 
 <img style='padding: 20px' src="/docs/assets/tutorial-image21.png" />
 
-To add __Actions__ to your __Local State__(state.md) simply click 'Add action' under the __Actions__ in __Local State__(state.md) settings. This will prompt you for the 'New action name'. 
+To add __Actions__ to your __Local State__ simply click 'Add action' under the __Actions__ in __Local State__ settings. This will prompt you for the 'New action name'. 
 
 Add the following Action for every change in the target values.
 
