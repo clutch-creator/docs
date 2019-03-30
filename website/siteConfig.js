@@ -16,13 +16,13 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Shift University' /* title for your website */,
-  tagline: 'Guide to Shift',
+  title: 'Shift Developer Documentation' /* title for your website */,
+  tagline: 'Guide to Shift for Developers',
   url: 'https://docs.shift.studio' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   projectName: 'docs',
   headerLinks: [
-    { doc: "index", label: "Getting Started" },
+    { href: "https://github.com/shift-studio/docs/", label: "Github" },
   ],
   users,
   /* path to images for header/footer */
