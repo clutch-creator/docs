@@ -1995,14 +1995,6 @@ footer.nav-footer {
     background: #2693FF;
 }
 
-.fixedHeaderContainer {
-    display: none;
-}
-
-.navPusher {
-    padding-top: 0;
-}
-
 .mainContainer .wrapper a {
     text-decoration: underline;
 }
