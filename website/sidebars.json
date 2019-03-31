@@ -6,6 +6,9 @@
       "queries-as-components",
       "custom-component"
     ],
+    "Working With Custom Components": [
+      "creating-a-custom-component",  
+    ],
     "Quick Start Guide": [
       "qs-01-welcome",
       "qs-02-intro-to-components",
