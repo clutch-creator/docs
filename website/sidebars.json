@@ -7,7 +7,8 @@
       "custom-component"
     ],
     "Working With Custom Components": [
-      "creating-a-custom-component",  
+      "creating-a-custom-component",
+      "custom-components-definition",
     ],
     "Quick Start Guide": [
       "qs-01-welcome",
