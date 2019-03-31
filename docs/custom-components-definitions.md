@@ -1,7 +1,7 @@
 ---
-id: custom-components-definition
-title: Custom Components Definition
-sidebar_label: Custom Components Definition
+id: custom-components-definitions
+title: Custom Components Definitions
+sidebar_label: Custom Components Definitions
 ---
 
 # Default Entry Definition
