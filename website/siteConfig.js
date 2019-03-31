@@ -62,6 +62,10 @@ const siteConfig = {
   repoUrl: 'https://github.com/shift-studio/docs',
   cname: 'docs.shift.studio',
   editUrl: 'https://github.com/shift-studio/docs/edit/master/docs/',
+  algolia: {
+    apiKey: 'fa38ba15e746822e73b692d24168be38',
+    indexName: 'shift_studio',
+  },
 };
 
 module.exports = siteConfig;
