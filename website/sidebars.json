@@ -1,59 +1,11 @@
 {
   "docs": {
-    "Walkthrough": [
-      "index",
-      "styling-a-component",
-      "queries-as-components",
-      "custom-component"
+    "Getting Started": [
+      "index"
     ],
     "Working With Custom Components": [
       "creating-a-custom-component",
       "custom-components-definitions"
-    ],
-    "Quick Start Guide": [
-      "qs-01-welcome",
-      "qs-02-intro-to-components",
-      "qs-03-styling-components",
-      "qs-04-symbols",
-      "qs-05-routes"
-    ],
-    "Tutorials": [
-      "message-board-tutorial"
-    ],
-    "Features": [
-      "dashboard",
-      "builder",
-      "canvas",
-      "component-tree",
-      "components",
-      "styles",
-      "state",
-      "props",
-      "actions-events",
-      "routing",
-      "graphql",
-      "dependency-manager",
-      "timeline",
-      "importing",
-      "exporting",
-      "real-collab"
-    ],
-    "Thinking in Shift": [
-      "good-practices",
-      "everything-components",
-      "files-modules"
-    ],
-    "Components": [
-      "router",
-      "route",
-      "link",
-      "text",
-      "replicate-list",
-      "html-elements"
-    ],
-    "References": [
-      "action-templates",
-      "shortcuts"
     ]
   }
 }

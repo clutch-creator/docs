@@ -4,7 +4,6 @@ title: Custom Components Definitions
 sidebar_label: Custom Components Definitions
 ---
 
-# Default Entry Definition
 Whether created with content in the tree, or as blank components, the outcome, from the components code perspective is the same.
 
 The following is the code created by default for custom components:
