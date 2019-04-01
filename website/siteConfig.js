@@ -54,7 +54,7 @@ const siteConfig = {
   projectName: 'docs', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
-    theme: 'default',
+    theme: 'darcula',
   },
   onPageNav: 'separate',
   scripts: ['https://buttons.github.io/buttons.js', '../script/test.js'],
