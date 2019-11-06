@@ -1,36 +1,28 @@
 ---
 id: components
 title: Components
-sidebar_label: Components
+sidebar_label: Introduction
 ---
-`Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.`
 
-Usually web development is about HTML elements but in the __Shift__ environment everything is treated as components even HTML elements are components, just like the __React's__ concept.
-This empowers reusability and isolation aswell as composition.
+From the dictionary: __*"A component is a part that combines with other parts to form something bigger"*__. And in web and shift it's no different. Components are the reusable parts that your application consists off. They can hold other components and expose properties to customize how they look or behave.
 
-For a more simple example imagine a HTML page having a Navigation Menu, a Product List, Product search and Footer. Developing the same structure in Shift would have a component for the page, other for the Navigation Menu, the Product List and so on. Each one of the components with its own specifics like Styling, Settings, State, and/or Flow.
-((scope needs to be more precise for such a equal topic to React))
+## Concepts
 
+instance
+master
 
-<br><br>
-## Root Components
+## Creating a Component
 
-((to be implemented))
+There are two ways to create new components in Shift:
 
-## Managing Components
+### Using the hierarchy
 
-## Component Settings
+Any instance can be right-clicked in the hierarchy, by clicking 'New Component' in the context menu that pops up, you'll be promped to input a Component name, by inputting a name and submitting you'll be creating a new Component holding the instance you right-clicked and its children.
 
-### Default Component Settings
-* Label -
-* Events -
-* Inline Styles -
-* Custom Properties -
+### Using the component drawer
 
-## Custom Components
-Maybe you prefer the DIY option, well __Shift__ enables you to develop your own __Shift Component__ with the same development template.
-Each component
+With the components drawer open you can press the 'New Component' button to create a component. A dialog will open asking for the new Component name. After submitting it'll create an empty Component.
 
->This will make possible the share of __Shift Components__ later on in a __MarketPlace__.
+## Components as Code
 
-## Symbols
+Regardless of how you choose to create a component the outcome will be similiar: a component of the name you've given will get added to both your component's drawer as well as a component definition in your project files tab. The only difference will be the presence of the preselected content if created from an existing instance in the hierarchy.

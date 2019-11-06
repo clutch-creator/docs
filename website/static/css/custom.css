@@ -109,7 +109,30 @@ footer.nav-footer {
     text-decoration: underline;
 }
 
-    
+.logo {
+  height: 23px !important;
+  margin-right: 20px !important;
+}
+
+.headerTitleWithLogo {
+  font-size: 15px !important;
+  color: #8e95a9;
+  font-weight: 400;
+}
+
+/* Menu */
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
+  font-weight: 800;
+  color: #2c2f32;
+}
+
+nav.toc .toggleNav ul li a {
+  color: #798495;
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+  color: #2693ff;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }

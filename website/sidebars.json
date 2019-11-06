@@ -3,9 +3,9 @@
     "Getting Started": [
       "index"
     ],
-    "Working With Custom Components": [
-      "creating-a-custom-component",
-      "custom-components-definitions"
+    "Components": [
+      "components",
+      "components-api"
     ]
   }
 }
